@@ -19,6 +19,7 @@
     "express-fileupload": "^1.1.4",
     "express-session": "^1.16.1",
     "hbs": "^4.0.4",
+    "request": "^2.88.0",
     "mongodb": "^3.2.4",
     "multer": "^1.4.1"
   },
