@@ -306,7 +306,7 @@ app.post('/upload', function (req, res) {
   let sampleFile = req.files.sampleFile;
 
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv('E:/Web Dev/mailernode/public/img/imgur-file-upload/' + sampleFile.name, function (err) {
+  sampleFile.mv('./public/img/imgur-file-upload/' + sampleFile.name, function (err) {
     if (err)
       return res.status(500).send(err);
 
