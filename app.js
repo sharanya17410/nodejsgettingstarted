@@ -392,7 +392,7 @@ app.get('/getAlbum/:id', (req, res) => {
       array.push({ title: title[0].albumtitle });
       array.push({ description: title[0].description });
       array.push({ id: title[0].id });
-      res.send({ album: array });
+      res.redirect({ album: array });
 
     } else {
       console.log('Unable to fetch album info');
@@ -468,9 +468,9 @@ app.post('/test/upload', (req, res) => {
     });
     albumArray = albums.getAll();
 
-    res.render('admin', {
-      albums: albumArray
-    });
+    // res.render('admin', {
+    //   albums: albumArray
+    // });
     res.redirect('/admin');
   });
 });
