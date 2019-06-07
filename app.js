@@ -306,7 +306,7 @@ app.post('/upload', function (req, res) {
   let sampleFile = req.files.sampleFile;
 
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv('./public/img/imgur-file-upload/' + sampleFile.name, function (err) {
+  sampleFile.mv(path.join(__dirname, '/public/img/imgur-file-upload/')+ sampleFile.name, function (err) {
     if (err)
       return res.status(500).send(err);
 
@@ -328,7 +328,7 @@ app.post('/upload', function (req, res) {
         request.post({
           headers: { 'Authorization': 'Client-ID ' + 'c2049e40de14fa8' },
           url: 'https://api.imgur.com/3/image',
-          formData: { image: fs.createReadStream(`./public/img/imgur-file-upload/${file}`) },
+          formData: { image: fs.createReadStream(path.join(__dirname, '/public/img/imgur-file-upload/'+file)) },
         }, function (err, response, body) {
           if (err) {
             console.log(err);
