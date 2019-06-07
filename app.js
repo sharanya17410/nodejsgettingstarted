@@ -386,6 +386,7 @@ app.get('/getAlbum/:id', (req, res) => {
     if (!error && response.statusCode === 200) {
 
       var images = JSON.parse(body).data.images;
+      console.log(images);
       if(images.length>1){
       for (var i = 0; i < images.length; i++) {
         array.push({ imagelink: images[i].link, imageid: images[i].id });
