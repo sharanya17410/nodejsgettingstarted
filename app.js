@@ -420,12 +420,12 @@ app.post('/test/upload', (req, res) => {
   let sampleFile = req.files.myImage;
 
   // Use the mv() method to place the file somewhere on your server
-  sampleFile.mv(path.join(__dirname, '/public/img/imgur-file-upload/') + sampleFile.name, function (err) {
+  sampleFile.mv(path.join(__dirname, '/imgur-file-upload/') + sampleFile.name, function (err) {
     if (err)
       return res.status(500).send(err);
 
     //joining path of directory 
-    const directoryPath = path.join(__dirname, '/public/img/imgur-file-upload/');
+    const directoryPath = path.join(__dirname, '/imgur-file-upload/');
     //passsing directoryPath and callback function
     fs.readdir(directoryPath, function (err, files) {
       //handling error
@@ -438,7 +438,7 @@ app.post('/test/upload', (req, res) => {
         request.post({
           headers: { 'Authorization': 'Client-ID ' + 'c2049e40de14fa8' },
           url: 'https://api.imgur.com/3/image',
-          formData: { image: fs.createReadStream(path.join(__dirname, '/public/img/imgur-file-upload/'+file)) },
+          formData: { image: fs.createReadStream(path.join(__dirname, '/imgur-file-upload/'+file)) },
         }, function (err, response, body) {
           if (err) {
             console.log(err);
