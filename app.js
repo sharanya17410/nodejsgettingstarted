@@ -255,10 +255,10 @@ app.get('/delAlbum/:id',(req,res)=>{
 });
 albumArray = albums.getAll();
   
-  res.render('admin',{
-    albums : albumArray
-});
-//res.redirect('/admin');
+//   res.render('admin',{
+//     albums : albumArray
+// });
+res.redirect('/admin');
 
 });
 
@@ -286,9 +286,10 @@ app.get('/deletePicture/:picID/:albumID',(req,res)=>{
     console.log(JSON.stringify(body,0,2));
   });
     albumArray = albums.getAll();
-    res.render('admin',{
-      albums : albumArray
-  });
+  //   res.render('admin',{
+  //     albums : albumArray
+  // });
+  res.redirect('/admin');
 }); 
 
 
