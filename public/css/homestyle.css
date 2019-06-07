@@ -328,7 +328,7 @@ background-position:center;
   font-size: 2em;
   color: white;
   font-weight: bolder;
-  filter:brightness(100%) !important;
+  /* filter:brightness(100%) !important; */
   
 }
 
@@ -358,7 +358,7 @@ background-position:center;
   background:url('../img/bridge.jpg'); 
   background-size: cover;
   background-attachment: fixed;  
-  height: 90vh;
+  height: 100vh;
 }
 #about h1{
   padding-top: 5rem;
