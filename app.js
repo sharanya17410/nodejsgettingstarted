@@ -392,7 +392,7 @@ app.get('/getAlbum/:id', (req, res) => {
     if (!error && response.statusCode === 200) {
       console.log(response);
       var images = JSON.parse(body).data.images;
-      console.log(`Changes ------------ ${JSON.parse(body).data}`);
+      console.log(`Changes ------------ ${JSON.stringify(body, null, 2)}`);
       if(images.length>1){
       for (var i = 0; i < images.length; i++) {
         array.push({ imagelink: images[i].link, imageid: images[i].id });
