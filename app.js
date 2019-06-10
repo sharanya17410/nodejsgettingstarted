@@ -384,7 +384,7 @@ app.get('/getAlbum/:id', (req, res) => {
     url: `https://api.imgur.com/3/account/sharanya17410/album/${id}`,
   }, (error, response, body) => {
     if (!error && response.statusCode === 200) {
-
+      console.log(response);
       var images = JSON.parse(body).data.images;
       console.log(images);
       if(images.length>1){
