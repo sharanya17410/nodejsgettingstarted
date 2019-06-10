@@ -376,7 +376,11 @@ app.post('/upload', function (req, res) {
 });
 
 app.get('/getAlbum/:id', (req, res) => {
+  
+  var id = (req.params.id);
+  console.log(`------------------------------ID is ${id}`);
   res.send(req.params.id);
+
   // var id = (req.params.id);
   // console.log(`------------------------------ID is ${id}`);
   // var title = albums.getalbum(id);
