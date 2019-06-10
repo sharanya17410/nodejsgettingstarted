@@ -343,11 +343,13 @@
                 alert('Yay i was clicked');
                 var data = $(this).closest('div').parent().parent().attr("id");
                 // var url = "";
+                alert(data);
                 var url = "https://yoca-front-to-back.herokuapp.com/getAlbum/" + $(this).closest('div').parent().parent().attr("id");
 
                 fetch(url)
                     .then(dataWrappedByPromise => dataWrappedByPromise.json())
                     .then(data => {
+                        akert(data);
                         $('.tz-gallery').show();
                         $('.tz-gallery .row').empty();
                         $('.card-container').hide();
