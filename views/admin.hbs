@@ -340,6 +340,7 @@
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].addEventListener('click', function () {
                 console.log($(this).closest('div').parent().parent().attr("id"));
+                alert('Yay i was clicked');
                 var data = $(this).closest('div').parent().parent().attr("id");
                 // var url = "";
                 var url = "https://yoca-front-to-back.herokuapp.com/getAlbum/" + $(this).closest('div').parent().parent().attr("id");
