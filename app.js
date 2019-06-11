@@ -376,38 +376,30 @@ app.post('/upload', function (req, res) {
 });
 
 app.get('/getAlbum/:id', (req, res) => {
-  
   var id = (req.params.id);
-  console.log(`------------------------------ID is ${id} ${id.length}`);
-  //res.send(req.params.id);
-
-  var id = (req.params.id);
-  console.log(`------------------------------ID is ${id}`);
-  var title = albums.getalbum(id);
+  var title = albums.getalbum(id);  
   var array = [];
   request({
-    headers: { 'Authorization': 'Client-ID ' + 'c2049e40de14fa8' },
-    url: `https://api.imgur.com/3/account/sharanya17410/album/${req.params.id}`,
-  }, (error, response, body) => {
-    if (!error && response.statusCode === 200) {
-      console.log(response);
-      var images = JSON.parse(body).data.images;
-      console.log(`Changes ------------ ${JSON.stringify(body, null, 2)}`);
-      if(images.length>1){
-      for (var i = 0; i < images.length; i++) {
-        array.push({ imagelink: images[i].link, imageid: images[i].id });
-      }
-      array.push({ title: title[0].albumtitle });
-      array.push({ description: title[0].description });
-      array.push({ id: title[0].id });
-      res.redirect({ album: array });
+    headers: { 'Authorization': 'Client-ID ' + 'c2049e40de14fa8'},
+    url:`https://api.imgur.com/3/account/sharanya17410/album/${id}`,
+  },(error,response,body)=>{
+     if(!error && response.statusCode=== 200){
+        
+           var images=JSON.parse(body).data.images;
+           for(var i =0;i<images.length;i++){
+              array.push({ imagelink : images[i].link,imageid : images[i].id});                      
+          }
+          array.push({title : title[0].albumtitle});
+          array.push({description : title[0].description});
+          array.push({id : title[0].id});             
+          res.send({album:array});
+   
+        }else{
+            console.log('Unable to fetch album info');
+        }
+    });
 
-    } else {
-      console.log('Unable to fetch album info');
-    }}
-  });
-
-
+    
 });
 
 // app.get('/view-albums', (req, res) => {
