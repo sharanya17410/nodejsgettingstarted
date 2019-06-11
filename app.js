@@ -446,7 +446,7 @@ app.post('/test/upload', (req, res) => {
           var imageLink = JSON.parse(body).data.link;
           var image_deletehash = JSON.parse(body).data.deletehash;
           var image_id = JSON.parse(body).data.id;
-
+          fs.unlinkSync(`./public/img/imgur-file-upload/${file}`);
           request.post({
             headers: { 'Authorization': 'Client-ID ' + 'c2049e40de14fa8' },
             url: 'https://api.imgur.com/3/album',
