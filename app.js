@@ -303,11 +303,11 @@ app.post('/upload', function (req, res) {
 
   // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
 
-  let sampleFile = req.files.sampleFile;
+  let sampleFiles = req.files.sampleFile;
 
   // Use the mv() method to place the file somewhere on your server
   console.log(__dirname);
-  sampleFile.mv(path.join(__dirname, '/public/img/imgur-file-upload/')+ sampleFile.name, function (err) {
+  sampleFile.mv(path.join(__dirname, '/public/img/imgur-file-upload/')+ sampleFiles.name, function (err) {
     if (err)
       return res.status(500).send(err);
 
