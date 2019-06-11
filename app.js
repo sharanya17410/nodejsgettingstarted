@@ -368,9 +368,9 @@ app.post('/upload', function (req, res) {
 
     albumArray = albums.getAll();
 
-    res.render('admin', {
-      albums: albumArray
-    });
+    // res.render('admin', {
+    //   albums: albumArray
+    // });
     res.redirect('/admin');
   });
 });
