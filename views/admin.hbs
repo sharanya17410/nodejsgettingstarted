@@ -124,7 +124,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -230,7 +230,7 @@
         for (var i = 0; i < buttons_add.length; i++) {
             //console.log(document.getElementsByClassName('addpictures'));
             buttons_add[i].addEventListener('click', function () {
-                console.log('yay i was clicked');
+                // console.log('yay i was clicked');
                 window.location.href = '/addPictures/' + $(this).closest('div').parent().parent().attr("id");;
                 //      {{!-- var url="http://localhost:3000/create/"+$(this).closest('div').parent().parent().attr("id");   
                 //     fetch("http://localhost:3000/view-albums")        
@@ -349,7 +349,7 @@
                 fetch(url)
                     .then(dataWrappedByPromise => dataWrappedByPromise.json())
                     .then(data => {
-                      //  alert(data);
+                        //  alert(data);
                         $('.tz-gallery').show();
                         $('.tz-gallery .row').empty();
                         $('.card-container').hide();
