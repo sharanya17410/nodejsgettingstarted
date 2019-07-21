@@ -213,7 +213,7 @@ a {
 }
 .navbar-default {
   border-color: transparent !important;
-  background-color: transparent !important;
+  background-color: black !important;
   font-size: 1.7em;
 }
 
@@ -222,8 +222,8 @@ a {
 
 #collapsible-navbar {
   font-family: 'Raleway', sans-serif;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 15px;
+  line-height: 20px;
   height: 100vh;
   background-color: #333;
   color: white;
@@ -478,7 +478,7 @@ i + a {
 .navbar-nav > li > a {
   padding-top: 0px;
   padding-bottom: 0px;
-  line-height: 80px;
+  line-height: 60px;
 }
 
 @media (max-width: 767px) {

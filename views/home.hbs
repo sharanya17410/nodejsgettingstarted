@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="#index" class="navbar-brand"> <img class="visible-lg" src="../public/img/yoca-logo.png" height="40"
+      <a href="#index" class="navbar-brand"> <img class="visible-lg" src="../public/img/yoca-logo.png" height="35"
           width="210"></a>
 
 
@@ -443,7 +443,7 @@
     {
 	  if (35 - event.clientY < 0) {
         hoverMenu.css({
-            top: 55 - event.clientY
+            top: 75 - event.clientY
         });
     } else {
         hoverMenu.css({
@@ -456,7 +456,7 @@
 	   if($(window).width() >568)
     {
     hoverMenu.css({
-        top: -55
+        top: -75
     });}
   });
 </script>
@@ -559,11 +559,11 @@
 
           if (scroll >= banner_height && currScrollTop > lastScrollTop) {
             //$("#banner").hide();
-            $("#MagicMenu .navbar-collapse .nav .nav-item a").css('color', 'black');
+            $("#MagicMenu .navbar-collapse .nav .nav-item a").css('color', 'white');
             $(".navbar").css('background', ' white');
           } else {
             //$("#banner").show();
-            $("#MagicMenu .navbar-collapse .nav .nav-item a").css('color', 'black');
+            $("#MagicMenu .navbar-collapse .nav .nav-item a").css('color', 'white');
             $(".navbar").css('background', ' transparent');
           }
           lastScrollTop = currScrollTop;
