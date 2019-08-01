@@ -283,12 +283,14 @@
             for (var i = 0; i < buttonsDelPics.length; i++) {
                 buttonsDelPics[i].addEventListener('click', function () {
                     alert('del buttn was clicked');
-                    var url = "https://yoca-front-to-back.herokuapp.com/deletePicture/" + $(this).siblings('img').attr("id") + "/" + $(this).closest('div').parent().siblings('h1').attr('id');
+					//https://yoca-front-to-back.herokuapp.com
+					//http://localhost:3000
+                    var url = "http://yoca-front-to-back.herokuapp.com/deletePicture/" + $(this).siblings('img').attr("id") + "/" + $(this).closest('div').parent().siblings('h1').attr('id');
                     // window.location.href = '/deletePicture/'+$(this).siblings('img').attr("id");
                     console.log($(this).closest('div').children('img').attr('id'));
                     console.log($(this).closest('div').parent().siblings('h1').attr('id'));
                     window.location.href = '/deletePicture/' + $(this).closest('div').children('img').attr('id') + "/" + $(this).closest('div').parent().siblings('h1').attr('id');
-                    var url = "https://yoca-front-to-back.herokuapp.com/getAlbum/" + $(this).closest('div').parent().siblings('h1').attr('id');
+                    var url = "http://yoca-front-to-back.herokuapp.com/getAlbum/" + $(this).closest('div').parent().siblings('h1').attr('id');
                     /*  {{!-- fetch(url).then((response)=>{ console.log(response.json());})
                       .then( (result) => {
                           console.log('success:', result)
@@ -345,7 +347,7 @@
                 // var url = "";
                 alert(data);
 				//https://yoca-front-to-back.herokuapp.com
-                var url = "https://yoca-front-to-back.herokuapp.com/getAlbum/" + $(this).closest('div').parent().parent().attr("id");
+                var url = "http://yoca-front-to-back.herokuapp.com/getAlbum/" + $(this).closest('div').parent().parent().attr("id");
 
                 fetch(url)
                     .then(dataWrappedByPromise => dataWrappedByPromise.json())
