@@ -100,7 +100,7 @@
                             <h5 class="modal-title" id="exampleModalLabel">Create an album</h5>
                         </div>
                         <div class="modal-body">
-                            <form method="POST" action="/test/upload" enctype="multipart/form-data">
+                            <form method="POST" action="/upload" enctype="multipart/form-data">
                                 <div class="form-group">
                                     <label>Album Name</label>
                                     <input name="name" type="text" class="form-control" placeholder="Enter album name">
@@ -344,6 +344,7 @@
                 var data = $(this).closest('div').parent().parent().attr("id");
                 // var url = "";
                 alert(data);
+				//https://yoca-front-to-back.herokuapp.com
                 var url = "https://yoca-front-to-back.herokuapp.com/getAlbum/" + $(this).closest('div').parent().parent().attr("id");
 
                 fetch(url)

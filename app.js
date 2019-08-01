@@ -214,7 +214,7 @@ app.get('/addPictures/:id', (req, res) => {
 
   //Write the album ID of the album to which the picture is to be added into a file
   fs.writeFileSync('albums_id.txt', req.params.id);
-
+  console.log('addPictures called');
   res.render('addPictures');
 });
 
@@ -319,7 +319,7 @@ app.post('/upload', function(req, res) {
           //For each file upload it to Imgur and get its unique ID (deletehash) back in response
 
           //To add an image to an Album you need album's ÍD and image's deletehash
-
+          console.log('before request');
           request.post(
             {
               headers: { Authorization: 'Client-ID ' + 'c2049e40de14fa8' },
@@ -335,9 +335,9 @@ app.post('/upload', function(req, res) {
                 console.log(err);
               }
               //Delete the file after uploading to the Image Hosting Site
-
+              console.log('bafter request');
               fs.unlinkSync(`./public/img/imgur-file-upload/${file}`);
-
+              console.log('unlink request');
               //Get Images's deletehash from the Post request's response
 
               var image_deletehash = JSON.parse(body).data.deletehash;
@@ -414,7 +414,7 @@ app.get('/getAlbum/:id', (req, res) => {
 // });
 
 //Create album with album cover
-app.post('/test/upload', (req, res) => {
+app.post('/upload', (req, res) => {
   if (Object.keys(req.files).length == 0) {
     return res.status(400).send('No files were uploaded.');
   }
