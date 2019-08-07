@@ -33,10 +33,6 @@
     "request": "^2.88.0",
     "tape": "^4.7.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
-  },
   "keywords": [
     "node",
     "heroku",
